@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+.container
+{ 
+  margin: 2vw 5vw;
+  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-container 
+{
+  width : 300px;
+  height: 300px;
+
+  margin: 2vw;
+
+  box-shadow: 3px 3px 10px 3px #cccaca;
+}
+
+mat-card-content
+{
+  overflow-y: scroll;
+  height:fit-content;
+}
+
+.avatar
+{
+  width: 50px;
+}

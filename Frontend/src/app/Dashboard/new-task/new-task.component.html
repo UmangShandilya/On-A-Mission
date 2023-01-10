@@ -1,0 +1,75 @@
+<div class="page-content">
+    <div class="container flex">
+        <div class="svg-content">
+            <img src="assets/AddTask.svg" alt="Add Task Image">
+        </div>
+
+        <!-- Form Starts -->
+        <div class="form-content">
+        
+                <h1 class="title">Create A Mission</h1>
+           
+            <form [formGroup]=newTaskForm>
+                <mat-grid-list cols="1" rowHeight="10vh">
+
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Task Title</mat-label>
+                            <input type="text" matInput placeholder="Task Title" formControlName="taskName">
+                            <mat-error *ngIf="taskNameEntity && taskNameEntity.invalid && taskNameEntity.touched">
+                                This field cannot be left blank.</mat-error>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field class="category">
+                            <mat-label>Category</mat-label>
+                            <mat-select formControlName="category">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Home">Home</mat-option>
+                                <mat-option value="Work">Work</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field class="priority">
+                            <mat-label>Priority</mat-label>
+                            <mat-select formControlName="choosePriority">
+                                <mat-option value="LOW">Low</mat-option>
+                                <mat-option value="MEDIUM">Medium</mat-option>
+                                <mat-option value="HIGH">High</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Due Date</mat-label>
+                            <input type="date" matInput formControlName="dueDate" placeholder="Due Date">
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Content</mat-label>
+                            <textarea matInput placeholder="Content" formControlName="content"></textarea>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+
+                </mat-grid-list>
+
+                <mat-grid-list cols="1" rowHeight="10vh">
+                    <mat-grid-tile>
+                        <button mat-raised-button color="primary" (click)="addTask()" [disabled]="newTaskForm.invalid"
+                            class="add-button">Add</button>
+                    </mat-grid-tile>
+                </mat-grid-list>
+
+            </form>
+            <!-- Form Ends -->
+        </div>
+    </div>
+</div>

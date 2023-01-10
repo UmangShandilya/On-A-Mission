@@ -1,0 +1,28 @@
+ @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+.card-container 
+{
+  width : 200px;
+  height: 60px;
+
+  margin: 1vw;
+
+  box-shadow: 3px 3px 10px 3px #cccaca;
+}
+
+mat-card-title
+{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+mat-card-actions
+{
+  position: relative;
+  bottom: 30px;
+}
+.avatar
+{
+  width: 25px;
+}

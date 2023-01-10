@@ -1,0 +1,14 @@
+<div>
+    <h1>Notification</h1>
+    <mat-card class="card-container" *ngFor="let notification of fetchedNotification">
+      <mat-card-header>
+        <mat-card-title>{{notification.taskName}}</mat-card-title>
+        <mat-card-subtitle>  {{notification.message}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions align="end">
+        <button mat-button matTooltip="Delete Notification" (click)="delete(notification.notificationID)">
+          <img src="assets/Dashboard Icons/Bin.gif" alt="Tool Image" class="avatar">
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

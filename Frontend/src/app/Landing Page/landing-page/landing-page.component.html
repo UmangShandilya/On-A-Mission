@@ -1,0 +1,52 @@
+<app-navigation-bar></app-navigation-bar>
+<div class="header">
+
+  <!--Content before waves-->
+  <div class="inner-header">
+    <h1>Welcome Aboard!</h1>
+    <p class="short-description">Join the mission and track your tasks. We have also got a dedicated web dashboard with
+      data feeds
+      for you so you can get notified when something interesting happens!
+    </p>
+  </div>
+
+  <div class="registration-area">
+    <div>
+      <img src="assets/HomeIllustartion.svg" alt="No image available">
+      <p>Already on a mission?</p>
+      <button mat-raised-button routerLink="sign-in">Sign In</button>
+    </div>
+
+    <div>
+      <img src="assets/SignUp.svg" alt="No image available">
+      <p>Register on a mission!
+      </p>
+      <button mat-raised-button routerLink="sign-up">Sign Up</button>
+    </div>
+  </div>
+</div>
+<!--Header ends-->
+
+<!--Waves Container-->
+<div>
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28"
+    preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+    </g>
+  </svg>
+</div>
+<!--Waves end-->
+
+<!--Content starts-->
+<div class="content">
+  Developed By
+  <p class="developer-area"> Pragati Singh | Thummidi Ashok | Umang Shandilya</p>
+</div>
+<!--Content ends-->

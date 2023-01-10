@@ -1,0 +1,34 @@
+<div class="page-content">
+  <div class="container flex">
+    <div class="svg-content">
+      <img src="assets/People.svg" alt="Add Task Image">
+    </div>
+
+    <!-- Form Starts -->
+    <div class="form-content">
+
+      <h1 class="title">User Details</h1>
+
+      <form [formGroup]=userProfileForm>
+        <mat-grid-list cols="1" rowHeight="10vh">
+
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>User Name</mat-label>
+              <input type="text" matInput placeholder="User Name" formControlName="userName">
+              <mat-error *ngIf="userNameEntity && userNameEntity.invalid && userNameEntity.touched">
+                This field cannot be left blank.</mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" (click)="saveProfile()" [disabled]="userProfileForm.invalid"
+              class="add-button">Save</button>
+
+          </mat-grid-tile>
+
+        </mat-grid-list>
+
+      </form>
+      <!-- Form Ends -->
+    </div>
+  </div>
+</div>

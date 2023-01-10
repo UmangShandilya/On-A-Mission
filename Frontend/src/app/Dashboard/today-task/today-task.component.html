@@ -1,0 +1,100 @@
+<mat-tab-group>
+    <mat-tab label="High Priority">
+        <div class="container">
+            <mat-card class="card-container" *ngFor="let task of highPriorityTasks">
+                <img mat-card-image src="assets/CardPattern.png" alt="Card Pattern Image" class="card-image">
+                <mat-card-header>
+                    <mat-card-title>{{task.taskName}}</mat-card-title>
+                    <mat-card-subtitle>{{task.choosePriority}}</mat-card-subtitle>
+                    <mat-card-subtitle>{{task.dueDate}}</mat-card-subtitle>
+                    <mat-card-subtitle>{{task.category}}</mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <p>
+                        {{task.content}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button matTooltip="Edit" (click)="openEditDialog(task)">
+                        <img src="assets/Dashboard Icons/Tool.gif" alt="Tool Image" class="avatar">
+                    </button>
+
+                    <button mat-button matTooltip="Delete Task" (click)="removeTask(task.taskName);">
+                        <img src="assets/Dashboard Icons/Bin.gif" alt="Tool Image" class="avatar">
+                    </button>
+
+                    <button mat-button matTooltip="Completed" (click)="markTaskAsCompleted(task);">
+                        <img src="assets/Dashboard Icons/Check.gif" alt="Tool Image" class="avatar">
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Medium Priority">
+        <div class="container">
+            <mat-card class="card-container" *ngFor="let task of mediumPriorityTasks">
+                <img mat-card-image src="assets/CardPattern.png" alt="Card Pattern Image" class="card-image">
+                <mat-card-header>
+                    <mat-card-title>{{task.taskName}}</mat-card-title>
+                    <mat-card-subtitle>{{task.choosePriority}}</mat-card-subtitle>
+                    <mat-card-subtitle>{{task.dueDate}}</mat-card-subtitle>
+                    <mat-card-subtitle>{{task.category}}</mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <p>
+                        {{task.content}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button matTooltip="Edit" (click)="openEditDialog(task)">
+                        <img src="assets/Dashboard Icons/Tool.gif" alt="Tool Image" class="avatar">
+                    </button>
+
+                    <button mat-button matTooltip="Delete Task" (click)="removeTask(task.taskName);">
+                        <img src="assets/Dashboard Icons/Bin.gif" alt="Tool Image" class="avatar">
+                    </button>
+
+                    <button mat-button matTooltip="Completed" (click)="markTaskAsCompleted(task);">
+                        <img src="assets/Dashboard Icons/Check.gif" alt="Tool Image" class="avatar">
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Low Priority">
+        <div class="container">
+            <mat-card class="card-container" *ngFor="let task of lowPriorityTasks">
+                <img mat-card-image src="assets/CardPattern.png" alt="Card Pattern Image" class="card-image">
+                <mat-card-header>
+                    <mat-card-title>{{task.taskName}}</mat-card-title>
+                    <mat-card-subtitle>{{task.choosePriority}}</mat-card-subtitle>
+                    <mat-card-subtitle>{{task.dueDate}}</mat-card-subtitle>
+                    <mat-card-subtitle>{{task.category}}</mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <p>
+                        {{task.content}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button matTooltip="Edit" (click)="openEditDialog(task)">
+                        <img src="assets/Dashboard Icons/Tool.gif" alt="Tool Image" class="avatar">
+                    </button>
+
+                    <button mat-button matTooltip="Delete Task" (click)="removeTask(task.taskName);">
+                        <img src="assets/Dashboard Icons/Bin.gif" alt="Tool Image" class="avatar">
+                    </button>
+
+                    <button mat-button matTooltip="Completed" (click)="markTaskAsCompleted(task);">
+                        <img src="assets/Dashboard Icons/Check.gif" alt="Tool Image" class="avatar">
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </mat-tab>
+</mat-tab-group>

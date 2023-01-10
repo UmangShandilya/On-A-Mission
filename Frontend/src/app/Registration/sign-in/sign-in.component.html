@@ -1,0 +1,49 @@
+<app-navigation-bar></app-navigation-bar>
+<div class="page-content">
+    <div class="container flex">
+        <!-- SVG Starts-->
+        <div class="svg-content">
+            <img src="assets/HomeIllustartion.svg" alt="No image available">
+        </div>
+        <!-- SVG Ends -->
+
+        <!-- Form Starts -->
+        <div class="form-content">
+            <h1 class="title">Sign-In</h1>
+            <form [formGroup]=signInForm>
+                <mat-grid-list cols="1" rowHeight="10vh">
+
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput placeholder="Email" formControlName="email">
+                            <mat-error *ngIf="emailEntity && emailEntity.invalid && emailEntity.touched">
+                                This field cannot be left blank.</mat-error>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput placeholder="Password" formControlName="password">
+                            <mat-error *ngIf="passwordEntity && passwordEntity.invalid && passwordEntity.touched">
+                                This field cannot be left blank.</mat-error>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                </mat-grid-list>
+
+                <mat-grid-list cols="1" rowHeight="10vh">
+                    <mat-grid-tile>
+                        <button mat-raised-button color="primary" (click)="signIn()" [disabled]="signInForm.invalid"
+                             class="sign-in-button">Sign In</button>
+                    </mat-grid-tile>
+                </mat-grid-list>
+
+            </form>
+        </div>
+        <!-- Form Ends -->
+
+    </div>
+    <a href="sign-up" class="register-link">New to On A Mission? Sign Up</a>
+</div>

@@ -1,0 +1,70 @@
+<!-- <form [formGroup]="addForm" (ngSubmit)="addTask()">
+    <div>
+        Title:<input type="text" formControlName="title">
+    </div>
+    <div>
+        Content:<input type="text" formControlName="content">
+    </div>
+
+    <div>
+        Date<input type="date" formControlName="dueDate">
+    </div>
+    <div>
+        Priority<input type="text" formControlName="choosePriority">
+    </div>
+    <div>
+        Category<input type="text" formControlName="category">
+    </div>
+    <div>
+        Image<input type="text" formControlName="imageUrl">
+    </div>
+    <!-- <div>
+        completed<input type="text" formControlName="isCompleted">
+    </div> -->
+
+<!-- <button>Add</button>
+</form>  -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<section class="get-in-touch">
+    <h1 class="title">Create Notes</h1>
+    <form class="todo-form row" [formGroup]="addForm" (ngSubmit)="addTask()">
+        <div class="form-field col-lg-6">
+            <input id="text" class="input-text js-input" type="text" formControlName="title">
+            <label class="label" for="text">Title</label>
+        </div>
+        <div class="form-field col-lg-12">
+            <input id="text" class="input-text js-input" type="textarea" formControlName="content">
+            <!-- <textarea type="text" name="desciption" id="desciption" class="form-control" formControlName="desciption"></textarea> -->
+            <label class="label" for="text">Content</label>
+        </div>
+        <div class="form-field col-lg-6 ">
+            <input id="date" class="input-text js-input" type="date" formControlName="dueDate">
+            <label class="label" for="date">Date</label>
+        </div>
+        <div class="form-field col-lg-6 ">
+            <select id="priority" class="input-text js-inpit" formControlName="choosePriority">
+                <option>HIGH</option>
+                <option>MEDIUM</option>
+                <option>LOW</option>
+
+            </select>
+            <label class="label" for="priority">Priority</label>
+        </div>
+        <div class="form-field col-lg-6">
+            <input id="category" class="input-text js-input" type="text" formControlName="category">
+            <label class="label" for="category">Category</label>
+        </div>
+        <div class="form-field col-lg-6">
+            <input id="category" class="input-text js-input" type="text" formControlName="imageUrl">
+            <label class="label" for="category">image</label>
+        </div>
+
+        <div class="form-field col-lg-12">
+            <input class="submit-btn" type="submit" value="Save">
+        </div>
+    </form>
+</section>

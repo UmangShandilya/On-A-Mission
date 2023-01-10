@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+.page-content {
+    background: linear-gradient(93deg, #9796f0 0%, #fbc7d4 100%);
+    box-shadow: 3px 3px 10px 3px #cccaca;
+    height: 80vh;
+    width: 65vw;
+    text-align: center;
+}
+
+.container {
+    width: 62vw;
+    height: 78vh;
+    position: relative;
+    top: 1vh;
+    left: 1vw;
+    border: #fefffe solid 2px;
+}
+
+.svg-content>img {
+    width: 60vw;
+    margin-top: 2vh;
+}
+
+.form-content {
+    background-color: #fefffe;
+    position: relative;
+}
+
+.title {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 24px;
+
+    color: #cf92fa;
+
+    position: relative;
+    top: 1vh;
+}
+
+.add-button {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 14px;
+
+    background-color: #cf92fa;
+    color: #fefffe;
+}
+
+/* MEDIA QUERIES */
+/*For Medium Devices*/
+ @media (min-width: 768px)
+{
+    .page-content {
+        width: 42vw;
+        text-align: center;
+    }
+    
+    .container {
+        width: 40vw; 
+    }
+    
+    .svg-content>img {
+        width: 20vw;
+    }
+    
+    .form-content {
+        background-color: #fefffe;
+        position: relative;
+        height: 77vh; width: 20vw;
+    }
+    
+    .title {
+        font-size: 30px;
+    }
+    
+    mat-form-field
+    {
+        width: 18vw;
+    }
+
+    .flex {
+        /*Flexbox for containers*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}

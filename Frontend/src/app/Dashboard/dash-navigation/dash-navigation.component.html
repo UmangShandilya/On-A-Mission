@@ -1,0 +1,80 @@
+<mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <button mat-button (click)="drawer.toggle()" class="toggle-button" [ngClass]="{'hidden' : !(isHandset$ | async)}">
+                <mat-icon style="font-size: 36px;">menu</mat-icon>
+            </button>
+            <div class="triangle-pattern">
+                <img src="assets/PatternTriangle.png" alt="No Image Available">
+            </div>
+
+            <span class="brand">
+                <a href="dash" style="text-decoration: none; color: #fefffe;">
+                    <mat-icon class="brand-logo"> radio_button_checked </mat-icon>
+                    on a mission
+                </a>
+            </span>
+
+            <div class="welcome-area">
+                <span> Welcome!<button mat-button [matBadge]="fetchedNotification.length" matBadgeSize="large"
+                        matBadgeOverlap="false" (click)="openDialogBox()" matTooltip="Notification">{{userName}}</button></span>
+            </div>
+
+            <div class="pattern">
+                <img src="assets/Pattern.png" alt="No Image Available">
+            </div>
+
+        </mat-toolbar>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
+<mat-drawer-container class="drawer-container">
+    <mat-drawer mode="side" [opened]="!(isHandset$ | async)" #drawer fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'">
+        <button mat-button routerLink="task" matTooltip="Dashboard">
+            <img src="assets/Dashboard Icons/Dashboard.gif" alt="No image available" class="avatar">
+            Dashboard
+        </button>
+        <mat-divider></mat-divider>
+
+        <button mat-button routerLink="add-task">
+            <img src="assets/Dashboard Icons/NewTask.gif" alt="No image available" class="avatar">
+            New Task
+        </button>
+        <mat-divider></mat-divider>
+
+        <button mat-button routerLink="today">
+            <img src="assets/Dashboard Icons/TodayTask.gif" alt="No image available" class="avatar">
+            Today
+        </button>
+        <mat-divider></mat-divider>
+
+        <button mat-button routerLink="archive">
+            <img src="assets/Dashboard Icons/Archive.gif" alt="No image available" class="avatar">
+            Archive
+        </button>
+        <mat-divider></mat-divider>
+
+        <button mat-button (click)="openProfile()">
+            <img src="assets/Dashboard Icons/UserAvatar.gif" alt="No image available" class="avatar">
+            User Profile
+        </button>
+        <mat-divider></mat-divider>
+
+        <div class="sign-out">
+            <mat-divider></mat-divider>
+            <button mat-button (click)="signOut()">
+                <img src="assets/Dashboard Icons/SignOut.gif" alt="No image available" class="avatar">
+                Sign Out
+            </button>
+            <mat-divider></mat-divider>
+        </div>
+
+    </mat-drawer>
+
+    <!-- Main Content -->
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

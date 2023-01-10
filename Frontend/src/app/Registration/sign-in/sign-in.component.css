@@ -1,0 +1,113 @@
+app-navigation-bar {
+    width: 100vw;
+    position: fixed;
+    z-index: 1;
+}
+
+.page-content {
+    background: linear-gradient(93deg, #9796f0 0%, #fbc7d4 100%);
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    width: 70vw;
+    position: relative;
+    top: 10vh;
+    left: 15vw;
+    border: #fefffe solid 2px;
+}
+
+.svg-content>img {
+    width: 70vw;
+}
+
+.form-content {
+    background-color: #fefffe;
+    width: 70vw;
+    height: 60vh;
+    position: relative;
+}
+
+.title {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 42px;
+
+    color: #cf92fa;
+
+    position: relative;
+    top: 2vh;
+}
+
+form {
+    position: relative;
+    top: 3vh;
+}
+
+.sign-in-button {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 14px;
+
+    background-color: #cf92fa;
+    color: #fefffe;
+}
+
+.register-link
+{
+    position: relative;
+    left: 1vw; top: 7vw;
+    color: #c26efe;
+    
+    font-family: 'Comfortaa', cursive;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+/*For Large Devices*/
+@media (min-width: 992px) {
+
+    .container {
+        width: 50vw;
+        position: relative;
+        top: 30vh;
+        left: 25vw;
+    }
+
+    .svg-content>img {
+        width: 25vw;
+    }
+
+    .form-content {
+        width: 25vw;
+        height: 60vh;
+        position: relative;
+    }
+
+    .title {
+        font-size: 48px;
+    }
+
+    .register-link
+    {
+        position: relative;
+        left: 12.5vw; top: 7vw;
+        color: #c26efe;
+    
+        font-family: 'Comfortaa', cursive;
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+    .flex {
+        /*Flexbox for containers*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+

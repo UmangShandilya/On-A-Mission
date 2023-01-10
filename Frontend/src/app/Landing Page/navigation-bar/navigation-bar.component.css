@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+.hidden {display: none}
+
+
+mat-nav-list>a
+{
+  font-family: 'Comfortaa', cursive;
+  letter-spacing: 1px;
+  color: #b294e4;
+}
+
+.brand-container
+{
+  font-family: 'Comfortaa', cursive;
+  letter-spacing: 2px;
+  color: #b294e4;
+}
+
+.brand-name
+{
+  font-size: 30px;
+  text-decoration: none; 
+  color: #b294e4;
+}
+
+.brand-logo
+{
+  font-size: 30px;
+  position: relative;
+  top: 5px;
+}
+
+.navigation-right-elements
+{
+  display: inline-flex;
+  position: absolute;
+  left: 60vw;
+}
+
+.navigation-right-elements>a
+{
+  text-decoration: none; 
+
+  font-family: 'Comfortaa', cursive;
+  letter-spacing: 1px;
+  color: #b294e4;
+
+  margin: 0vw 1.5vw;
+} 
+
+/* Medium Screen And Below */
+@media(max-width : 840px) 
+{
+  .navigation-right-elements{display : none}
+
+  .brand-name, .brand-logo, .toggle-icon
+  {
+    font-size: 24px;
+  }
+}

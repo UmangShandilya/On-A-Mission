@@ -1,0 +1,71 @@
+version: "3.3"
+services:
+  mysqlService:
+    image: mysql:5.5
+    container_name: mysql-container
+    ports:
+      - 3306:3306
+    network_mode: host
+    hostname: localhost
+    environment:
+      MYSQL_ROOT_PASSWORD: Innovative@1
+      MYSQL_DATABASE: todo
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+  mongodb-service:
+    image: mongo:latest
+    container_name: mongo-container
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 27017:27017
+
+  user-authentication-service:
+    container_name: user-authentication-service
+    build: AuthenticationService/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 9000:9000
+    depends_on:
+      - mysqlService
+
+  todolist-service:
+    container_name: todo-service
+    build: ToDoListService/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 65100:65100
+    depends_on:
+      - mongodb-service
+    restart: always
+
+  alert-service:
+    container_name: alert-service
+    build: AlertService/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 65110:65110
+    depends_on:
+      - mongodb-service
+    restart: always
+
+  gateway_service:
+    image: gateway_image
+    container_name: gateway_container
+    build: APIGateway/
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 8080:8080
+
+  eureka_service:
+    image: eureka_image
+    container_name: eureka_container
+    build: Eureka-Server/
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 8761:8761

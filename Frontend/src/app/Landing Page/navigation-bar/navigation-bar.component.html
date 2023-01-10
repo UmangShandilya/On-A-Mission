@@ -1,0 +1,44 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <!-- Side Navigation Drawer Starts -->
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)" [ngClass]="{'hidden' : !(isHandset$ | async)}">
+
+    <mat-nav-list>
+      <a mat-list-item href="#">Home</a>
+      <a mat-list-item href="#">About</a>
+      <a mat-list-item href="#">Contact</a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <!-- Side Navigation Drawer Ends -->
+
+  <!-- Top Navigation Bar Starts -->
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        [ngClass]="{'hidden' : !(isHandset$ | async)}">
+        <mat-icon aria-label="Side nav toggle icon" class="toggleIcon" style="color: #b294e4;">menu</mat-icon>
+      </button>
+
+      <span class="brand-container">
+        <a href="" class="brand-name">
+          <mat-icon class="brand-logo"> radio_button_checked </mat-icon>
+          on a mission
+        </a>
+      </span>
+
+      <div class="navigation-right-elements">
+        <a mat-list-item href="">Home</a>
+        <a mat-list-item href="#">About</a>
+        <a mat-list-item href="#">Contact</a>
+      </div>
+    </mat-toolbar>
+
+    <!-- Add Content Here -->
+
+  </mat-sidenav-content>
+  <!--Top Navigation Bar Ends  -->
+
+</mat-sidenav-container>
